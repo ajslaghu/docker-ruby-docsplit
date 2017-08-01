@@ -1,4 +1,4 @@
-FROM seapy/ruby:2.2.0
+FROM seapy/ruby:2.3.1
 
 MAINTAINER seb@lewagon.org
 
@@ -31,3 +31,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/
 
 # Install Docsplit dependencies
 RUN apt-get install -qq -y graphicsmagick ImageMagick poppler-utils poppler-data ghostscript pdftk
+
+RUN gem install docsplit
+
+CMD /usr/sbin/nginx
