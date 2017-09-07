@@ -31,7 +31,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/
 
 # Install Docsplit dependencies
 RUN apt-get install -qq -y graphicsmagick ImageMagick poppler-utils poppler-data ghostscript pdftk
-
+RUN apt-get update && apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-nld
 RUN gem install docsplit
 
 CMD /usr/sbin/nginx
